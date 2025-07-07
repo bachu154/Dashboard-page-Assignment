@@ -1,0 +1,662 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive table styles */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  .table-responsive th,
+  .table-responsive td {
+    padding: 8px 4px;
+  }
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Enhanced responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .table-mobile-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sticky table header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.dark .sticky-header {
+  background: rgba(17, 24, 39, 0.95);
+  border-bottom: 2px solid #374151;
+}
+
+/* Dark mode enhancements */
+.dark {
+  color-scheme: dark;
+}
+
+.dark .table-mobile-card {
+  background: rgb(31 41 55);
+  border: 1px solid rgb(55 65 81);
+}
+
+/* Improved button hover states */
+button:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced pagination */
+.pagination-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.pagination-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 768px) {
+  .mobile-padding {
+    padding: 1rem;
+  }
+
+  .mobile-text {
+    font-size: 0.875rem;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .table-row-hover,
+  .pagination-btn,
+  .sort-icon,
+  .card-hover,
+  .mobile-card {
+    transition: none;
+    transform: none;
+  }
+
+  .table-row-hover:hover,
+  .pagination-btn:hover,
+  .card-hover:hover,
+  .mobile-card:hover {
+    transform: none;
+  }
+}
+
+/* Focus improvements */
+.focus-ring:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Loading state improvements */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .table-container {
+    overflow-x: hidden;
+  }
+
+  .mobile-card {
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .mobile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Enhanced Table Row Hover Effects */
+.table-row-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid transparent;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-left-color: #3b82f6;
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.dark .table-row-hover:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Sort Icon Animations */
+.sort-icon {
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-header:hover .sort-icon {
+  transform: scale(1.1);
+  color: #3b82f6;
+}
+
+/* Mobile Stack Layout */
+@media (max-width: 640px) {
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-full-width {
+    width: 100%;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+
+  .mobile-padding {
+    padding: 1rem;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+
+  /* Pagination mobile adjustments */
+  .pagination-mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .pagination-mobile button {
+    min-width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Enhanced Card Hover Effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .responsive-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .responsive-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .responsive-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Enhanced Dark Mode Transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .table-row-hover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-left-color: #000;
+  }
+
+  .dark .table-row-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #fff;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-First Breakpoint Utilities */
+@media (max-width: 640px) {
+  .mobile-p-4 {
+    padding: 1rem;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+
+  .mobile-gap-3 {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tablet-hidden {
+    display: none;
+  }
+
+  .tablet-block {
+    display: block;
+  }
+}
+
+/* Loading Shimmer */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.dark .loading-shimmer {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+/* Enhanced Mobile Table Responsiveness */
+@media (max-width: 1024px) {
+  /* Ensure no horizontal overflow on mobile */
+  .table-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Hide desktop table completely on mobile */
+  .desktop-table {
+    display: none !important;
+  }
+
+  /* Ensure mobile cards don't overflow */
+  .mobile-card-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Desktop table scrolling */
+@media (min-width: 1024px) {
+  .table-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-scroll-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+
+  .table-scroll-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Mobile pagination improvements */
+@media (max-width: 640px) {
+  .pagination-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .pagination-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pagination-buttons {
+    min-width: max-content;
+    display: flex;
+    gap: 0.25rem;
+    padding: 0 1rem;
+  }
+
+  .pagination-buttons button {
+    flex-shrink: 0;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Improved mobile spacing */
+@media (max-width: 768px) {
+  .mobile-spacing {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mobile-card-spacing {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .mobile-text-adjust {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* Prevent horizontal scroll on all screen sizes */
+body {
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Enhanced card layout for mobile */
+@media (max-width: 1024px) {
+  .comment-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .comment-card-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Responsive container improvements */
+.responsive-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Table minimum widths for proper desktop display */
+@media (min-width: 1024px) {
+  .data-table {
+    min-width: 800px;
+  }
+
+  .table-cell-post-id {
+    min-width: 100px;
+  }
+
+  .table-cell-name {
+    min-width: 200px;
+  }
+
+  .table-cell-email {
+    min-width: 200px;
+  }
+
+  .table-cell-comment {
+    min-width: 300px;
+  }
+}
+
+/* Mobile-first approach for controls */
+@media (max-width: 1024px) {
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .page-size-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .controls-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: end;
+  }
+
+  .search-container {
+    flex: 1;
+  }
+
+  .page-size-container {
+    width: 12rem;
+    flex-shrink: 0;
+  }
+}
