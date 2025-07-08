@@ -1,36 +1,57 @@
-# 🚀 SWIFT Front-End Internship Assignment – React Dashboard Project
+# SWIFT Front-End Internship Assignment – React Dashboard Project
 
-[![Deployed on Vercel](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/ygdHjlO4RUB)
-
----
-
-## 📌 Objective
-
-This project is built as part of the **SWIFT Front-End Internship Assignment**. It demonstrates core front-end skills including:
-
-- React-based UI development
-- Custom pagination, sorting, and search logic
-- Client-side state persistence
-- Cross-browser responsive design
+This project is part of the SWIFT Front-End Internship Assignment. The objective was to build a responsive React dashboard with two main screens: a Profile screen and a Comments Dashboard, using dummy API data. The app focuses on functionality, UI design, and custom logic implementation for pagination, sorting, and state persistence.
 
 ---
 
-## 🌐 Live Demo
+## 🔗 Links
 
-👉 [Click here to view the deployed project](https://v0-react-dashboard-project-sruthibachu2709-6059s-projects.vercel.app/)
+- **Live Demo:** [Click to View](https://v0-react-dashboard-project-sigma.vercel.app/)
+- **GitHub Repository:** [Click to View](https://github.com/bachu154/Dashboard-page-Assignment)
+- **Screen Recording (Google Drive):** [Click to Watch](https://drive.google.com/file/d/1lh-UYt1ZJ7OEOJk7HvvpyBSjZ7quyk9s/view?usp=sharing)
 
+---
 
-## 🧱 Project Structure
+## ✅ Key Features
+
+### Profile Screen
+- Fetches user data from `https://jsonplaceholder.typicode.com/users`
+- Displays **only the first user record**
+- Non-editable profile details
+- Navigation back to Dashboard
+
+### Comments Dashboard
+- Fetches 500 comments from `https://jsonplaceholder.typicode.com/comments`
+- Custom **pagination** (10, 50, 100 records per page)
+- **Partial search** for `name`, `email`, `phone`
+- Custom **sorting** for `Post ID`, `Name`, `Email` with 3-mode cycle:
+  - No sort → Ascending → Descending → No sort
+- Only one active sorting column at a time
+- **State persistence** using localStorage for:
+  - Current page, page size, search query, sort order
+
+### UI & UX
+- Responsive layout for desktop and mobile
+- Fixed table overflow issue using `min-w-[800px]`
+- Simple and intuitive user interface
+
+---
+
+## 🛠️ Tech Stack
+
+- React + Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- LocalStorage (for filter persistence)
+- Deployed on Vercel
+
+---
+
+## 📂 Project Setup
 
 ```bash
-Dashboard-page-Assignment-main/
-├── app/                   # Routing and pages (Profile, Dashboard)
-├── components/            # Reusable components (Table, Pagination, Header, etc.)
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utilities (localStorage, sort logic)
-├── public/                # Static assets
-├── styles/                # Tailwind CSS styles
-├── package.json
-├── tsconfig.json
-└── ...
+git clone https://github.com/bachu154/Dashboard-page-Assignment.git
+cd Dashboard-page-Assignment
+pnpm install      # or npm install
+pnpm dev          # or npm run dev
