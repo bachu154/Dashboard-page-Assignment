@@ -18,9 +18,8 @@ This project is built as part of the **SWIFT Front-End Internship Assignment**. 
 
 ## 🌐 Live Demo
 
-👉 [View Live Project on Vercel](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)
+👉 [Click here to view the deployed project](https://v0-react-dashboard-project-sruthibachu2709-6059s-projects.vercel.app/)
 
----
 
 ## 🧱 Project Structure
 
