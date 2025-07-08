@@ -1,30 +1,37 @@
-# React Dashboard Project
+# 🚀 SWIFT Front-End Internship Assignment – React Dashboard Project
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)
+[![Deployed on Vercel](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/ygdHjlO4RUB)
 
-## Overview
+---
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 📌 Objective
 
-## Deployment
+This project is built as part of the **SWIFT Front-End Internship Assignment**. It demonstrates core front-end skills including:
 
-Your project is live at:
+- React-based UI development
+- Custom pagination, sorting, and search logic
+- Client-side state persistence
+- Cross-browser responsive design
 
-**[https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)**
+---
 
-## Build your app
+## 🌐 Live Demo
 
-Continue building your app on:
+👉 [View Live Project on Vercel](https://vercel.com/sruthibachu2709-6059s-projects/v0-react-dashboard-project)
 
-**[https://v0.dev/chat/projects/ygdHjlO4RUB](https://v0.dev/chat/projects/ygdHjlO4RUB)**
+---
 
-## How It Works
+## 🧱 Project Structure
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+Dashboard-page-Assignment-main/
+├── app/                   # Routing and pages (Profile, Dashboard)
+├── components/            # Reusable components (Table, Pagination, Header, etc.)
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utilities (localStorage, sort logic)
+├── public/                # Static assets
+├── styles/                # Tailwind CSS styles
+├── package.json
+├── tsconfig.json
+└── ...
